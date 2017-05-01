@@ -77,3 +77,31 @@ p {
 footer.page-footer {
   margin: 0;
 }
+
+.small-box {
+  border-radius: 2px;
+  position: relative;
+  display: block;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+.small-box > .inner {
+  padding: 10px;
+}
+.small-box h3 {
+  font-size: 38px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  white-space: nowrap;
+  padding: 0;
+}
+
+/*.small-box h3{
+  z-index: 5;
+}*/
+
+@media (max-width: 750px) {
+  .small-box {
+    text-align: center;
+  }
+}
