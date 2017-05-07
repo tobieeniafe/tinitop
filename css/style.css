@@ -134,3 +134,8 @@ footer.page-footer {
      .input-field .prefix.active {
        color: #64b5f6;
      }
+
+a .small-box .inner h5, a .small-box .inner i {
+  color: #000;
+  text-decoration: none;
+}
