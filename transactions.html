@@ -9,10 +9,19 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet">
+  <link href="css/ionicons.min.css" type="text/css" rel="stylesheet">
+  <link href="css/template.css" type="text/css" rel="stylesheet">
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
 </head>
 <body>
-
+<style type="text/css">
+#container {
+    min-width: 300px;
+    max-width: 500px;
+    height: 150px;
+    margin: 0 auto
+}
+</style>
 
  <!--  <div class="progress">
       <div class="indeterminate blue lighten-2"></div>
@@ -40,11 +49,102 @@
       <a href="#" data-activates="nav-mobile" class="button-collapse white-text"><i class="material-icons">&#xE5D2;</i></a>
     </div>
   </nav>
+  <p></p>
+  <div class="case row">
+    <div class="col m4 s12">
+      <div id="exchangerate"></div>
+    </div>
+
+    <div class="col m2 s4">
+      <div class="small-box blue-text lighten-2">
+            <div class="inner">
+              <h3>150</h3>
+
+              <p>New Posts</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-newspaper-o blue-text lighten-2"></i>
+            </div>
+            <a href="#" class="small-box-footer blue lighten-2">View Posts <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+
+    <div class="col m2 s4">
+      <div class="small-box blue-text lighten-2">
+            <div class="inner">
+              <h3>10</h3>
+
+              <p>New Bids</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars blue-text lighten-2"></i>
+            </div>
+            <a href="#" class="small-box-footer blue lighten-2">View Bids <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+
+    <div class="col m2 s4">
+      <div class="small-box blue-text lighten-2">
+            <div class="inner">
+              <h3><i class="fa fa-plus"></i></h3>
+
+              <p>Post Offer</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-add blue-text lighten-2"></i>
+            </div>
+            <a href="#" class="small-box-footer blue lighten-2">Create Offer <i class="fa fa-plus"></i></a>
+      </div>
+    </div>
+
+    <div class="col m2 s4">
+      <div class="small-box blue-text lighten-2">
+            <div class="inner">
+              <h3><i class="fa fa-tags"></i></h3>
+
+              <p>Active Offers</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-add blue-text lighten-2"></i>
+            </div>
+            <a href="#" class="small-box-footer blue lighten-2">View Offers <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+
+    <div class="col m2 s4">
+      <div class="small-box blue-text lighten-2">
+            <div class="inner">
+              <h3><i class="fa fa-handshake-o"></i></h3>
+
+              <p>Completed</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-money blue-text lighten-2"></i>
+            </div>
+            <a href="#" class="small-box-footer blue lighten-2">View Offers <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+
+    <div class="col m2 s4">
+      <div class="small-box blue-text lighten-2">
+            <div class="inner">
+              <h3><i class="fa fa-credit-card"></i></h3>
+
+              <p>My Wallet</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-credit-card blue-text lighten-2"></i>
+            </div>
+            <a href="#" class="small-box-footer blue lighten-2">View Wallet <i class="fa fa-arrow-circle-right"></i></a>
+      </div>
+    </div>
+
+  </div>
 
 
 
 
-
+<br><br><br><br><br>
   <footer class="page-footer blue">
     <div class="footer-copyright">
       <div class="container">
@@ -57,7 +157,65 @@
   <!--  Scripts-->
   <script src="js/jquery.min.js"></script>
   <script src="js/materialize.min.js"></script>
+  <script src="js/highstock.js"></script>
+  <script src="js/exporting.js"></script>
   <script src="js/script.js"></script>
+  <script>
+  $.getJSON('https://www.highcharts.com/samples/data/jsonp.php?filename=new-intraday.json&callback=?', function (data) {
+
+  // create the chart
+  Highcharts.stockChart('exchangerate', {
+
+
+      title: {
+          text: 'Exchange Rate in Last 24 hours'
+      },
+
+      subtitle: {
+          text: ''
+      },
+
+      xAxis: {
+          gapGridLineWidth: 0
+      },
+
+      rangeSelector: {
+          buttons: [{
+              type: 'day',
+              count: 1,
+              text: '1D'
+          }],
+          selected: 1,
+          inputEnabled: false
+      },
+
+      series: [{
+          name: 'rate',
+          type: 'area',
+          data: data,
+          gapSize: 5,
+          tooltip: {
+              valueDecimals: 2
+          },
+          fillColor: {
+              linearGradient: {
+                  x1: 0,
+                  y1: 0,
+                  x2: 0,
+                  y2: 1
+              },
+              stops: [
+                  [0, Highcharts.getOptions().colors[0]],
+                  [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+              ]
+          },
+          threshold: null
+      }]
+  });
+});
+
+  </script>
+
 
   </body>
 </html>

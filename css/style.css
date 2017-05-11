@@ -143,3 +143,7 @@ a .small-box .inner h5, a .small-box .inner i {
 .casing{
   margin: 20px 20px 0px 20px;
 }
+
+#exchangerate{
+  height: 300px;
+}
