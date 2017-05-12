@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css?family=Lato:300');
+@import url('https://fonts.googleapis.com/css?family=Lato:400');
 
 html {
   height: 100%;
@@ -146,4 +146,8 @@ a .small-box .inner h5, a .small-box .inner i {
 
 #exchangerate{
   height: 300px;
+}
+
+.nav-wrapper ul li a :hover , .hide-on-med-and-down li a :hover {
+  color: #ffffff;
 }
