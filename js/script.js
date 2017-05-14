@@ -10,3 +10,5 @@
 $(document).ready(function(){
       $('.carousel').carousel();
 });
+
+$(".dropdown-button").dropdown();
