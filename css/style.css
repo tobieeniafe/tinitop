@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css?family=Lato:400');
+@import url('https://fonts.googleapis.com/css?family=Lato:300');
 
 html {
   height: 100%;
@@ -26,6 +26,10 @@ footer {
 
 h1 , h2 , h3 , h4 , h5{
   font-family: 'Lato', sans-serif;
+}
+
+nav ul a {
+  font-size: 1em;
 }
 
 nav ul a,
@@ -148,6 +152,11 @@ a .small-box .inner h5, a .small-box .inner i {
   height: 300px;
 }
 
-.nav-wrapper ul li a :hover , .hide-on-med-and-down li a :hover {
+/*.nav-wrapper ul li a :hover , .hide-on-med-and-down li a :hover {
   color: #ffffff;
+}*/
+
+a:hover{
+  text-decoration: none;
+  color: #fff;
 }
