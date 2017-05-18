@@ -24,7 +24,7 @@ footer {
   left: 0;
 }
 
-h1 , h2 , h3 , h4 , h5{
+* , h1 , h2 , h3 , h4 , h5{
   font-family: 'Lato', sans-serif;
 }
 
@@ -158,5 +158,9 @@ a .small-box .inner h5, a .small-box .inner i {
 
 a:hover{
   text-decoration: none;
-  color: #fff;
+  color: #90a4ae;
 }
+
+/*.fa , .ion ,.glyphicon , .material-icons{
+  color: #0d47a1;
+}*/
