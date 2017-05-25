@@ -11,4 +11,8 @@ $(document).ready(function(){
       $('.carousel').carousel();
 });
 
-$(".dropdown-button").dropdown();
+$(".dropdown-button").dropdown
+
+$('.carousel.carousel-slider').carousel({fullWidth: true});
+
+$('.carousel.carousel-slider').carousel({duration: 200});
